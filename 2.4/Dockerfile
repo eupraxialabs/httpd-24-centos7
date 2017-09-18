@@ -65,7 +65,8 @@ RUN /usr/libexec/httpd-prepare
 
 USER 1001
 
-VOLUME ["${HTTPD_DATA_PATH}"]
-VOLUME ["${HTTPD_LOG_PATH}"]
+# Removed by David J. Brewer/Eupraxia Labs - this will allow a s2i build on OpenShift Online
+#VOLUME ["${HTTPD_DATA_PATH}"]
+#VOLUME ["${HTTPD_LOG_PATH}"]
 
 CMD ["/usr/bin/run-httpd"]
